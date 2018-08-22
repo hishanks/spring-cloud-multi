@@ -1,0 +1,29 @@
+eureka:
+  client:
+    service-Url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8769
+
+spring:
+  application:
+    name: service-zuul
+
+# routes下面一层属性是别名
+# path：请求URL
+# serviceId：注册到Eureka服务中心的spring.application.name
+zuul:
+  routes:
+    api-client:
+      path: /api-client/**
+      serviceId: eureka-client
+    api-client-x:
+      path: /api-client-x/**
+      serviceId: eureka-client-x
+    api-ribbon:
+      path: /api-ribbon/**
+      serviceId: service-ribbon
+    api-feign:
+      path: /api-feign/**
+        serviceId: service-feign

@@ -1,0 +1,13 @@
+server:
+  port: 8881
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8888/
+
+# 为啥是bootstrap.yml呢？因为按照源码里，这个比application.yml优先加载

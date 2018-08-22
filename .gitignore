@@ -1,0 +1,33 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+.DS_Store
+service-feign/.DS_Store
+service-feign/src/.DS_Store
+service-feign/src/main/.DS_Store
+service-feign/src/main/java/.DS_Store
+service-feign/src/main/java/com/.DS_Store
+service-feign/src/main/java/com/example/.DS_Store
+service-feign/src/main/java/com/example/servicefeign/.DS_Store

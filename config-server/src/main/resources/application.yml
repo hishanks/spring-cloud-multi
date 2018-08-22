@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master # 配置仓库分支
+      server:
+        git:
+          uri: https://github.com/forezp/SpringcloudConfig/ # 配置Git仓库地址
+          searchPaths: respo # 配置仓库路径
+          password: '' # 用户名（公开仓库则不需要用户名和密码，私有仓库需要指定）
+          username: '' # 密码
+
+# 远程仓库https://github.com/forezp/SpringcloudConfig/
+# 下面有个配置文件config-client-dev.properties
+# 文件中有一个属性：foo = foo version 3
+# 启动程序：访问http://localhost:8888/foo/dev
+# {"name":"foo","profiles":["dev"],"label":"master",version":"792ffc77c03f4b138d28e89b576900ac5e01a44b","state":null,"propertySources":[]}
+# 证明配置服务中心可以从远程程序获取配置信息
