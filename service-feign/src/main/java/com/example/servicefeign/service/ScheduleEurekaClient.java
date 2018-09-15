@@ -3,6 +3,8 @@ package com.example.servicefeign.service;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -23,6 +25,6 @@ public interface ScheduleEurekaClient {
      * @param name name
      * @return String
      */
-    @GetMapping("/client/home")
+    @RequestMapping(value = "/client/home", method = RequestMethod.GET)
     String sayHiFromEurekaClient(@RequestParam("name") String name);
 }
