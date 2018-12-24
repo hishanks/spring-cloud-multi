@@ -40,6 +40,6 @@ public class HelloService {
      * @return String
      */
     public String invokeMethodFromClientError(String name) {
-        return "执行Ribbon中整合的熔断器方法，参数为：" + name;
+        return String.format("执行Ribbon中整合的熔断器方法，参数为：%s", name);
     }
 }

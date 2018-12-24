@@ -23,10 +23,10 @@ public class HelloController {
     }
 
     /**
-     * 对外暴露一个/feign/hi?name=kevin接口
+     * 对外暴露一个/feign/hi?name=Shanks的接口
      *
-     * @param name
-     * @return
+     * @param name name
+     * @return String
      */
     @GetMapping("/hi")
     public String sayHiFromEurekaClient(@RequestParam("name") String name) {
