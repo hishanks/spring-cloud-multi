@@ -22,6 +22,5 @@ public class HelloController {
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
     public String hi(@RequestParam("name") String name) {
         return helloService.invokeMethodFromClient(name);
-
     }
 }
