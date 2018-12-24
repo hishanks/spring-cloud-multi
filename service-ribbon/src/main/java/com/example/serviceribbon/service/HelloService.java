@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author zhoukai
- * @date 2018/7/27
+ * @author Shanks
+ * @date 2018-12-24
  */
 @Service
 public class HelloService {
@@ -21,14 +21,15 @@ public class HelloService {
     }
 
     /**
-     * 调用微服务eureka-client的/client/home?name=kevin接口
+     * 调用微服务eureka-client的/client/home接口，参数为name
      * 注意事项：调用服务名大写
      *
      * @return String
      */
     @HystrixCommand(fallbackMethod = "invokeMethodFromClientError")
     public String invokeMethodFromClient(String name) {
-        String url = "http://EUREKA-CLIENT/client/home?name=kevin";
+
+        String url = "http://EUREKA-CLIENT/client/home?name=" + name;
         return restTemplate.getForObject(url, String.class);
     }
 
@@ -40,6 +41,5 @@ public class HelloService {
      */
     public String invokeMethodFromClientError(String name) {
         return "执行Ribbon中整合的熔断器方法，参数为：" + name;
-
     }
 }
