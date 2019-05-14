@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author zhoukai
- * @date 2018/7/27
+ * @author Shanks
+ * @date 2018-07-27
  */
 @RestController
 @RequestMapping("/feign")
@@ -24,6 +24,7 @@ public class HelloController {
 
     /**
      * 对外暴露一个/feign/hi?name=Shanks的接口
+     * 通过@FeignClient(value = "eureka-client", fallback = ScheduleEurekaClientImpl.class)调用微服务eureka-client的接口
      *
      * @param name name
      * @return String

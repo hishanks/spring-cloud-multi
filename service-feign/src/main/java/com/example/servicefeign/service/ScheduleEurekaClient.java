@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 通过@FeignClient("服务名")来指定调用哪个服务
  * 相对的@GetMapping("/client/home")指定调用哪个接口
  *
- * @author zhoukai
- * @date 2018/7/27
+ * @author Shanks
+ * @date 2018-07-27
  */
 @Component
 @FeignClient(value = "eureka-client", fallback = ScheduleEurekaClientImpl.class)

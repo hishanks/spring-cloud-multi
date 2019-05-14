@@ -11,9 +11,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author zhoukai
  * @date 2018-07-27
  */
-@SpringBootApplication
-@EnableEurekaClient
 @EnableFeignClients
+@EnableEurekaClient
+@SpringBootApplication
 public class ServiceFeignApplication {
 
     public static void main(String[] args) {
