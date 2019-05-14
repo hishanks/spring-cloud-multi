@@ -1,14 +1,16 @@
-eureka:
-  client:
-    service-Url:
-      defaultZone: http://localhost:8761/eureka/
-
 server:
   port: 8769
 
 spring:
   application:
     name: service-zuul
+
+eureka:
+  client:
+    service-Url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
 
 # routes下面一层属性是别名
 # path：请求URL

@@ -16,8 +16,8 @@ import java.io.IOException;
  * @author zhoukai
  * @date 2018/7/28
  */
-@Component
 @Slf4j
+@Component
 public class ServiceZuulFilter extends ZuulFilter {
 
     private static final String FILTER_TYPE = "pre";
