@@ -1,11 +1,14 @@
-eureka:
-  client:
-    service-Url:
-      defaultZone: http://localhost:8761/eureka/
-
 server:
   port: 8763
 
 spring:
   application:
     name: eureka-client
+
+eureka:
+  client:
+    service-Url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    # 指定实例id，在Eureka的页面上注册后就不会主机名了
+    instance-id: ${spring.application.name}:${server.port}
